@@ -1,4 +1,4 @@
-package DBCMySQL.JDBC;
+package dbc.JDBC;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -17,7 +17,7 @@ public class DBC implements AutoCloseable{
 		String bd;
 		Properties props = new Properties();
 		try {
-			props.load(new FileInputStream("mySQL.props"));
+			props.load(new FileInputStream("sqlite.props"));
 			url = props.getProperty("url");
 			bd = props.getProperty("bd");
 			conn = DriverManager.getConnection(url + bd, props);
